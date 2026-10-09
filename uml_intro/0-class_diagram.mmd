@@ -1,0 +1,35 @@
+---
+title: Library
+---
+classDiagram
+    class Library{
+        +add_book()
+        +register_user()
+        +create_loan()
+    }
+    class Book{
+        +String ID
+        +String title
+        +String author
+        +bool state
+        +mark_as_unavailable()
+        +mark_as_available()
+    }
+    class User{
+        +String name
+        +String email
+        +String ID
+    }
+    class Loan{
+        +String userID
+        +String bookID
+        +String start_date
+        +String end_date
+        +close_loan()
+    }
+    Loan "1"*--"1" User: Composition
+    Loan "1"*--"1" Book: COmposition
+    Book "*"..>"1" Library: is managed by
+    Library --> Book: Contains
+    User "*"..>"1" Library: is managed by
+    Loan "*"..>"1" Library: is managed by
