@@ -50,9 +50,6 @@ class CaramelDecorator(Beverage):
 
     def description(self) -> str:
         return self._inner.description() + " + caramel"
-# TODO: implement CaramelDecorator following the same pattern as MilkDecorator
-# cost(): self._inner.cost() + 15
-# description(): self._inner.description() + " + caramel"
 
 
 def main() -> None:
@@ -64,7 +61,6 @@ def main() -> None:
 
     cup3 = CaramelDecorator(MilkDecorator(SugarDecorator(Coffee())))
     print(cup3.description(), cup3.cost())
-    # TODO: build CaramelDecorator(MilkDecorator(SugarDecorator(Coffee()))) and print it
 
 
 if __name__ == "__main__":
